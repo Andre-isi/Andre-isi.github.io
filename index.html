@@ -18,6 +18,31 @@
 				<p>I'm best known as the horrible cop from <em>A Touch of Evil</em> Don't trust me. <a href="/about">Read more about my life...</a></p>
     		</div><!-- /.blurb -->
 		</div><!-- /.container -->
+<!-- 1. Place the button somewhere in your HTML -->
+<div id="nano-button"></div>
+
+<!-- 2. Add the BrainBlocks script -->
+<script src="https://brainblocks.io/brainblocks.min.js"></script>
+
+<!-- 3. Render the button -->
+<script type="text/javascript">
+  // Render the Nano button
+  brainblocks.Button.render({
+
+    // Pass in payment options
+    payment: {
+      currency: 'rai',
+      amount: '1000',
+      destination: 'xrb_1brainb3zz81wmhxndsbrjb94hx3fhr1fyydmg6iresyk76f3k7y7jiazoji'
+    },
+
+    // Handle successful payments
+    onPayment: function(data) {
+      // 4. Call BrainBlocks API to verify data.token
+      // See tab #2
+    }
+  }, '#nano-button');
+</script>
 		<footer>
     		<ul>
         		<li><a href="mailto:hankquinlanhub@gmail.com">email</a></li>
