@@ -22,8 +22,14 @@
         <!-- /.blurb -->
     </div>
     <!-- /.container -->
+
+
+
+
     <!-- 1. Place the button somewhere in your HTML -->
-    <div id="nano-button"></div>
+    <p id="demo">Click the button to change the text in this paragraph.</p>
+
+    <div id="nano-button" value="11"></div>
 
     <!-- 2. Add the BrainBlocks script -->
     <script src="https://brainblocks.io/brainblocks.min.js"></script>
@@ -32,11 +38,12 @@
     <script type="text/javascript">
         // Render the Nano button
         brainblocks.Button.render({
+            preco = document.getElementById("nano-button").value,
 
             // Pass in payment options
             payment: {
                 currency: 'eur',
-                amount: '300',
+                amount: preco,
                 destination: 'xrb_1brainb3zz81wmhxndsbrjb94hx3fhr1fyydmg6iresyk76f3k7y7jiazoji'
             },
 
