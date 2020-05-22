@@ -10,35 +10,28 @@
         <ul>
             <li><a href="/">Home</a></li>
             <li><a href="/">About</a></li>
-            <li><a href="/">CV</a></li>
-            <li><a href="/">Blog</a></li>
         </ul>
     </nav>
-    <div class="container">
-        <div class="blurb">
-            <h1>Hi there, I'm Hank Quinlan!</h1>
-            <p>I'm best known as the horrible cop from <em>A Touch of Evil</em> Don't trust me. <a href="/about">Read more about my life...</a></p>
-        </div>
-        <!-- /.blurb -->
-    </div>
-    <!-- /.container -->
 
 
 
 
     <!-- 1. Place the button somewhere in your HTML -->
-    <p id="demo">Click the button to change the text in this paragraph.</p>
+    <p id="demo">POR PAGAR</p>
 
-    <div id="nano-button" value="1990"></div>
+    <div id="nano-button">
+        <input type='hidden' id='price' name='price' value=1990></input>
+    </div>
 
     <!-- 2. Add the BrainBlocks script -->
-    <script src="https://brainblocks.io/brainblocks.min.js"></script>
+    <script src="https://brainblocks.io/brainblocks.js"></script>
 
     <!-- 3. Render the button -->
     <script type="text/javascript">
-        preco = document.getElementById("nano-button").value
+        preco = document.getElementById("price").value;
         // Render the Nano button
-        brainblocks.Button.render({            
+        brainblocks.Button.render({
+
 
             // Pass in payment options
             payment: {
@@ -51,15 +44,10 @@
             onPayment: function(data) {
                 // 4. Call BrainBlocks API to verify data.token
                 // See tab #2
+                document.getElementById("demo").innerHTML = "PAGADO PAGADO PAGADO PAGADO PAGADO PAGADO ";
             }
         }, '#nano-button');
     </script>
-    <footer>
-        <ul>
-            <li><a href="mailto:hankquinlanhub@gmail.com">email</a></li>
-            <li><a href="https://github.com/hankquinlan">github.com/hankquinlan</a></li>
-        </ul>
-    </footer>
 </body>
 
 </html>
